@@ -11,19 +11,19 @@ A comprehensive and intuitive task management application built with React, offe
 * **Firestore Integration**: All task data is persistently stored in Google Firestore, ensuring your tasks are saved and accessible.
 * **Today's View**: A dedicated section to easily view tasks due on the current day, helping you prioritize.
 * **Category-Based Organization**: (If your categories are dynamic or a prominent feature, mention this)
-* [cite_start]**Customizable Theme**: Toggle between light and dark modes to suit your preference, with styles managed via CSS variables.
-* [cite_start]**Responsive Design**: A user-friendly interface that adapts gracefully to various screen sizes, from mobile devices to desktops[cite: 60, 66, 80].
-* [cite_start]**Custom Fonts**: Utilizes "Comic Neue" font for a distinctive look[cite: 1, 4].
+* **Customizable Theme**: Toggle between light and dark modes to suit your preference, with styles managed via CSS variables.
+* **Responsive Design**: A user-friendly interface that adapts gracefully to various screen sizes, from mobile devices to desktops.
+* **Custom Fonts**: Utilizes "Comic Neue" font for a distinctive look.
 
 ## Technologies Used
 
-* [cite_start]**React**: A JavaScript library for building dynamic user interfaces[cite: 94].
-* [cite_start]**React Router DOM**: For declarative routing within the application[cite: 94].
+* **React**: A JavaScript library for building dynamic user interfaces.
+* **React Router DOM**: For declarative routing within the application.
 * **Firebase**:
-    * [cite_start]**Firebase Authentication**: For user sign-up, login, and session management[cite: 97, 98].
-    * [cite_start]**Firestore**: A NoSQL cloud database for storing and syncing task data in real-time[cite: 97, 99].
-* [cite_start]**Custom Hooks**: Leverages a `useLocalStorage` hook for managing application themes locally.
-* [cite_start]**CSS/SCSS Modules**: For scoped and maintainable styling, including a robust theming system using CSS variables.
+    * **Firebase Authentication**: For user sign-up, login, and session management.
+    * **Firestore**: A NoSQL cloud database for storing and syncing task data in real-time.
+* **Custom Hooks**: Leverages a `useLocalStorage` hook for managing application themes locally.
+* **CSS/SCSS Modules**: For scoped and maintainable styling, including a robust theming system using CSS variables.
 
 ## Getting Started
 
@@ -63,12 +63,13 @@ This project uses Firebase for authentication and data storage. You'll need to s
 6.  Create a file named `.env` in the root of your project and add your Firebase configuration variables like this (replace with your actual values):
 
     ```
-    REACT_APP_FIREBASE_API_KEY=your_api_key
-    REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
-    REACT_APP_FIREBASE_PROJECT_ID=your_project_id
-    REACT_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-    REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_Messaginger_id
-    REACT_APP_FIREBASE_APP_ID=your_app_id
+    VITE_FIREBASE_API_KEY=your_api_key
+    VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+    VITE_FIREBASE_PROJECT_ID=your_project_id
+    VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+    VITE_FIREBASE_MESSAGING_SENDER_ID=your_Messaging_sender_id
+    VITE_FIREBASE_APP_ID=your_app_id
+    VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
     ```
     *(Note: The provided code snippet shows `auth` and `db` imports from `./firebase`. Ensure you have a `firebase.ts` or `firebase.js` file that initializes Firebase with these environment variables.)*
 
