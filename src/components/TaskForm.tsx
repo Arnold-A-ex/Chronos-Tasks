@@ -76,7 +76,7 @@ export default function TaskForm({ show, onHide, onSubmit, taskToEdit }: TaskFor
         </Offcanvas.Header>
         <Offcanvas.Body>
             <Form onSubmit={ handleSubmit } className="task-form">
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3" controlId="task-title">
                     <Form.Label>Task Title</Form.Label>
                     <Form.Control
                         type="text"
@@ -89,7 +89,7 @@ export default function TaskForm({ show, onHide, onSubmit, taskToEdit }: TaskFor
                     <Form.Control.Feedback type="invalid">{ error }</Form.Control.Feedback>
                 </Form.Group>
 
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3" controlId="description">
                     <Form.Label>Description (Optional)</Form.Label>
                     <Form.Control
                         as="textarea"
@@ -101,7 +101,7 @@ export default function TaskForm({ show, onHide, onSubmit, taskToEdit }: TaskFor
                     />
                 </Form.Group>
 
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3" controlId="category">
                     <Form.Label>Category</Form.Label>
                     <Form.Select name="category" value={ formData.category } onChange={ handleChange }>
                         <option value="personal">Personal</option>
@@ -112,7 +112,7 @@ export default function TaskForm({ show, onHide, onSubmit, taskToEdit }: TaskFor
                     </Form.Select>
                 </Form.Group>
 
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3" controlId="due-date">
                     <Form.Label>Due Date (Optional)</Form.Label>
                     <Form.Control
                         type="date"
@@ -123,7 +123,7 @@ export default function TaskForm({ show, onHide, onSubmit, taskToEdit }: TaskFor
                 </Form.Group>
 
                 {taskToEdit && (
-                    <Form.Group className="mb-3">
+                    <Form.Group className="mb-3" controlId="completed">
                     <Form.Check
                         type="checkbox"
                         label="Completed"
