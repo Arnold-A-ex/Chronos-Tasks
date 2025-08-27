@@ -35,12 +35,15 @@ export default function Login({ onLoginSuccess }: LoginProps) {
 
         if(email.trim() === ""){
             setValueError(prevError => ({ prevError, email: "Please input email"}));
+            setLoading(false);
             return;
         }else if(!emailRegex.test(email)){
             setValueError(prevError => ({ prevError, email: "Please input valid email"}));
+            setLoading(false);
             return;
         }else if( password.trim() === ""){
             setValueError(prevError => ({ prevError, password: "Please input password"}));
+            setLoading(false);
             return;
         }
 
@@ -159,7 +162,7 @@ export default function Login({ onLoginSuccess }: LoginProps) {
                 <Form onSubmit={handleSubmit}>
                     {/* {error && !showResetModal && <Alert variant="danger" className="mb-3">{error}</Alert>} */}
 
-                    <Form.Group className="mb-3">
+                    <Form.Group className="mb-3" controlId="email">
                         <Form.Label className="">Email</Form.Label>
                         <Form.Control
                             type="text"
@@ -172,7 +175,7 @@ export default function Login({ onLoginSuccess }: LoginProps) {
                         <Form.Control.Feedback type="invalid">{ valueError.email }</Form.Control.Feedback>
                     </Form.Group>
 
-                    <Form.Group className="mb-3">
+                    <Form.Group className="mb-3" controlId="password">
                         <Form.Label className="">Password</Form.Label>
                         <Form.Control
                             type="password"
@@ -233,16 +236,16 @@ export default function Login({ onLoginSuccess }: LoginProps) {
                     {error && showResetModal && <Alert variant="danger">{error}</Alert>}
                     <p>Enter your email address and we'll send you a link to reset your password.</p>
                     <Form onSubmit={handlePasswordReset}>
-                        <Form.Group className="mb-3">
-                        <Form.Label>Email Address</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="Enter email"
-                            value={resetEmail}
-                            onChange={(e) => setResetEmail(e.target.value)}
-                            isInvalid={ !!valueError.resetEmail }
-                        />
-                        <Form.Control.Feedback type="invalid">{ valueError.resetEmail }</Form.Control.Feedback>
+                        <Form.Group className="mb-3" controlId="email">
+                            <Form.Label>Email Address</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Enter email"
+                                value={resetEmail}
+                                onChange={(e) => setResetEmail(e.target.value)}
+                                isInvalid={ !!valueError.resetEmail }
+                            />
+                            <Form.Control.Feedback type="invalid">{ valueError.resetEmail }</Form.Control.Feedback>
                         </Form.Group>
                         <Button variant="primary" type="submit" className="w-100 d-flex justify-content-center" disabled={loading}>
                             {loading && showResetModal ? <Spinner animation="border" size="sm" /> : 'Send Reset Email'}

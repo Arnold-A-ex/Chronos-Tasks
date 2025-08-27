@@ -49,7 +49,9 @@ body[data-theme= "dark"]{
 body{
     background-color: var(--bg) !important;
     transition: all 0.3s ease;
-    font-family: "Comic Neue", cursive !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-soothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 .sidebar{
     transition: all 0.3s ease;
